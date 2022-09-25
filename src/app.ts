@@ -5,7 +5,7 @@ const itemCosts = {
   Orange: 25,
 };
 
-function calculateCheckoutAmount(cartItems: Item[]) {
+function calculateCheckoutAmount(cartItems: Item[], isOffersActive = false) {
   let totalCost = 0;
   const itemAmount = new Map<Item, number>();
 
@@ -21,7 +21,23 @@ function calculateCheckoutAmount(cartItems: Item[]) {
     }
   }
 
-  itemAmount.forEach((amount, item) => {
+  const tempItemAmount = new Map(itemAmount);
+
+  if (isOffersActive) {
+    // Buy one, get one free on Apples
+    const appleAmount = tempItemAmount.get("Apple");
+    if (appleAmount) {
+      tempItemAmount.set("Apple", Math.ceil(appleAmount / 2));
+    }
+
+    // 3 for the price of 2 on Oranges
+    const orangeAmount = tempItemAmount.get("Orange");
+    if (orangeAmount) {
+      tempItemAmount.set("Orange", Math.ceil(orangeAmount * (2 / 3)));
+    }
+  }
+
+  tempItemAmount.forEach((amount, item) => {
     const cost = itemCosts[item];
     if (cost) {
       totalCost += amount * cost;
@@ -52,8 +68,9 @@ const cart: Item[] = [
   "Apple",
   "Orange",
   "Orange",
-  "Apple",
+  "Orange",
+  "Orange",
 ];
-const result = calculateCheckoutAmount(cart);
+const result = calculateCheckoutAmount(cart, true);
 
 printOutput(result);
