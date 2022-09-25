@@ -1,0 +1,25 @@
+{
+  "name": "leo-learning-task",
+  "version": "1.0.0",
+  "description": "Leo learning interview task",
+  "main": "app.js",
+  "scripts": {
+    "js:run": "node dist/app.js",
+    "ts:watch": "tsc -w",
+    "ts:build": "tsc",
+    "start": "tsc && node dist/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikhilvn/leo-learning-task.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nikhilvn/leo-learning-task/issues"
+  },
+  "homepage": "https://github.com/nikhilvn/leo-learning-task#readme",
+  "devDependencies": {
+    "typescript": "^4.8.3"
+  }
+}
