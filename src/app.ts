@@ -26,13 +26,13 @@ function calculateCheckoutAmount(cartItems: Item[], isOffersActive = false) {
   if (isOffersActive) {
     // Buy one, get one free on Apples
     const appleAmount = tempItemAmount.get("Apple");
-    if (appleAmount) {
+    if (appleAmount !== undefined) {
       tempItemAmount.set("Apple", Math.ceil(appleAmount / 2));
     }
 
     // 3 for the price of 2 on Oranges
     const orangeAmount = tempItemAmount.get("Orange");
-    if (orangeAmount) {
+    if (orangeAmount !== undefined) {
       tempItemAmount.set("Orange", Math.ceil(orangeAmount * (2 / 3)));
     }
   }
