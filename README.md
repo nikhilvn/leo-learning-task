@@ -26,7 +26,7 @@ To run step 1 of the task, run the following command.
 ```bash
 npm run start:step-1
 ```
-### Rational behind step 1
+### Rationale behind implementation of step 1
 
 We use the `calculateCheckoutAmount` function to calculate the total checkout amount and also quantities of each item. The function structure is:
 
@@ -65,7 +65,7 @@ To run step 2 of the task, run the following command.
 npm run start:step-2
 ```
 
-### Rational behind step 2
+### Rationale behind implementation of step 2
 
 The modification only for step 2 is the conditional-if block to apply offers. To run the code, we pass the second argument of the `calculateCheckoutAmount` function as `true`.
 
