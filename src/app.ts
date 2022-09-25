@@ -71,6 +71,11 @@ const cart: Item[] = [
   "Orange",
   "Orange",
 ];
-const result = calculateCheckoutAmount(cart, true);
 
-printOutput(result);
+if (process.argv[2] && process.argv[2] === "--offer") {
+  const result = calculateCheckoutAmount(cart, true);
+  printOutput(result);
+} else {
+  const result = calculateCheckoutAmount(cart);
+  printOutput(result);
+}
