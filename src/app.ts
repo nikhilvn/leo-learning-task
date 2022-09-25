@@ -38,10 +38,7 @@ function calculateCheckoutAmount(cartItems: Item[], isOffersActive = false) {
   }
 
   tempItemAmount.forEach((amount, item) => {
-    const cost = itemCosts[item];
-    if (cost) {
-      totalCost += amount * cost;
-    }
+    totalCost += amount * itemCosts[item];
   });
 
   return {
