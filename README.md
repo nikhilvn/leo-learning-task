@@ -11,7 +11,7 @@
 Clone the repo and install the dependencies.
 
 ```bash
-git clone https://github.com/nikhilvn/leo-learning-task-simple.git
+git clone https://github.com/nikhilvn/leo-learning-task.git
 cd leo-learning-task-simple
 ```
 
